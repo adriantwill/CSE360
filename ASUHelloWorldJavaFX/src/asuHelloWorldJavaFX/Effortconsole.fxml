@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asuHelloWorldJavaFX.SceneController">
+   <children>
+      <Label layoutX="206.0" layoutY="5.0" text="Effort Logger Console">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Line endX="502.66546630859375" endY="-3.814697265625E-6" layoutX="115.0" layoutY="39.0" startX="-123.47061157226562" startY="-7.62939453125E-6" />
+      <Rectangle fx:id="colorrec" arcHeight="5.0" arcWidth="5.0" fill="RED" height="38.0" layoutX="23.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="573.0" />
+      <Label layoutX="45.0" layoutY="92.0" text="1. When you start a new actiivty, &quot;press start  an activity&quot; button. " />
+      <Button fx:id="startbutton" layoutX="62.0" layoutY="116.0" mnemonicParsing="false" onAction="#clockstart" text="Start an activity" />
+      <Label layoutX="45.0" layoutY="436.0" text="4. Unless you are done for the day, it is best to perform steps 1 and 2 above before resuming work." />
+      <Label layoutX="72.0" layoutY="184.0" text="Project:" />
+      <ChoiceBox fx:id="projectchoice" layoutX="72.0" layoutY="206.0" prefWidth="150.0" />
+      <Label fx:id="examplelabel" layoutX="230.0" layoutY="51.0" text="Clock is stopped" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="304.0" layoutY="184.0" text="Life Cycle Step:" />
+      <ChoiceBox fx:id="lifecyclechoice" layoutX="304.0" layoutY="206.0" prefWidth="150.0" />
+      <Label layoutX="70.0" layoutY="248.0" text="Effort Category:" />
+      <ChoiceBox fx:id="effortchoice" layoutX="72.0" layoutY="271.0" prefWidth="150.0" />
+      <Label layoutX="303.0" layoutY="248.0" text="Plans:" />
+      <ChoiceBox fx:id="planchoice" layoutX="304.0" layoutY="271.0" prefWidth="150.0" />
+      <TextField fx:id="othertext" layoutX="67.0" layoutY="337.0" />
+      <Label fx:id="otherdetails" layoutX="70.0" layoutY="313.0" prefHeight="17.0" prefWidth="285.0" />
+      <Button fx:id="finalbutton" layoutX="60.0" layoutY="396.0" mnemonicParsing="false" onAction="#finalsubmit" text="Stop this activity" />
+      <Label layoutX="45.0" layoutY="167.0" text="2. Select the project, life cycle step, effort category, and deliverable from the following lists:" />
+      <Label layoutX="44.0" layoutY="369.0" text="3. Press the &quot;Stop this Activity&quot; to generate an effort log entry using the attributes above." />
+      <Label fx:id="errorLabel" layoutX="191.0" layoutY="401.0" prefHeight="17.0" prefWidth="312.0" />
+   </children>
+</AnchorPane>
