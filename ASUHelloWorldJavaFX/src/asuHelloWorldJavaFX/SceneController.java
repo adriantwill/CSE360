@@ -46,8 +46,12 @@ public class SceneController implements Initializable{
 	private String[] plans = {"Project Plan", "Risk Management", "Plan Conceptual", "Design Plan", "Detailed Design Plan", "Implementation Plan"};
 	private String[] interuptions = {"Break", "Phone", "Teammate", "Visitor", "Other"};
 	private String[] defects = {"Defect1", "Defect2", "Other"};
+	private long starttime;
+	private long endtime;
+	private long finaltime;
 	
 	public void clockstart(ActionEvent event) {
+		starttime = System.currentTimeMillis();
 		colorrec.setFill(Color.LIME);
 		examplelabel.setText("Clock is running");
 	}
@@ -99,15 +103,17 @@ public class SceneController implements Initializable{
 		}
 		return selection;
 	}
-	public String finalsubmit(ActionEvent event) {
-		String detailsselection = othertext.getText();
+	public long finalsubmit(ActionEvent event) {
+		endtime = System.currentTimeMillis();
+		finaltime = (endtime-starttime) / 1000;
 		colorrec.setFill(Color.RED);
 		examplelabel.setText("Clock is stopped");
 		System.out.println("Project type: " + getProject(event));
 		System.out.println("Life cycle: " + getLifeCycle(event));
 		System.out.println("Effort: " + getEffort(event));
 		System.out.println("Plans: " + getPlans(event));
-		return detailsselection;
+		System.out.println("Time: " + finaltime + " seconds");
+		return finaltime;
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

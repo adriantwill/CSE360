@@ -30,6 +30,9 @@ public class Controller{
 	private Scene scene; 
 	private Parent root;
 	
+	private String[] usernames = {"testuser1", "testuser2", "testuser3"};
+	private String[] passwords = {"pass123", "pass1234", "pass12345"};
+	
 	public void switchScene(ActionEvent event) throws IOException{
 	}
 	public void submit(ActionEvent event) throws IOException {
@@ -38,14 +41,18 @@ public class Controller{
 		if (password.length() < 6) {
 				errorLabel.setText("Error: Password too short");
 		}
-		else if ((username.equals("testuser")) && (password.equals ("123pass"))) {
-			Parent root = FXMLLoader.load(getClass().getResource("Effortconsole.fxml"));
-			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
-		} else {
-			errorLabel.setText("Error: Incorrect username or password");
-		}
+		for (int i = 0; i < usernames.length; i++) {
+            if (usernames[i].equals(username)) {
+                if (passwords[i].equals(password)) {
+                	Parent root = FXMLLoader.load(getClass().getResource("Effortconsole.fxml"));
+        			stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        			scene = new Scene(root);
+        			stage.setScene(scene);
+        			stage.show();	
+                }
+            } else {
+            	errorLabel.setText("Incorrect username or password");
+            }
+        }
 	}
 }
